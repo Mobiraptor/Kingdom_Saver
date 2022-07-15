@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/background/BG.png" type="Texture" id=1]
+
+[node name="CaveBackground" type="ParallaxBackground"]
+
+[node name="cave" type="ParallaxLayer" parent="."]
+position = Vector2( -872, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="cave"]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}

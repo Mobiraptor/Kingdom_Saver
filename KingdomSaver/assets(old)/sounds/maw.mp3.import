@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/maw.mp3-1b1f6d62e982a7714962ce2a386c1bb3.mp3str"
+
+[deps]
+
+source_file="res://assets(old)/sounds/maw.mp3"
+dest_files=[ "res://.import/maw.mp3-1b1f6d62e982a7714962ce2a386c1bb3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dragon 1.mp3-33dffa8d3f0eb0b4560bab0d69c2adfd.mp3str"
+
+[deps]
+
+source_file="res://assets/background/Sound/Dragon 1.mp3"
+dest_files=[ "res://.import/Dragon 1.mp3-33dffa8d3f0eb0b4560bab0d69c2adfd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

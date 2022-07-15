@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/utils/z_index_corrector.gd" type="Script" id=2]
+[ext_resource path="res://src/destructables/destructable.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.395, 16.747 )
+
+[node name="DestructableTemplate" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ZCorrector" type="Node2D" parent="."]
+script = ExtResource( 2 )

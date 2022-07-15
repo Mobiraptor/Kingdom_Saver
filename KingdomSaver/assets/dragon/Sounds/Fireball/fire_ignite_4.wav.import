@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fire_ignite_4.wav-e4a28a3c109c2b77f0d62eb973a6beeb.sample"
+
+[deps]
+
+source_file="res://assets/dragon/Sounds/Fireball/fire_ignite_4.wav"
+dest_files=[ "res://.import/fire_ignite_4.wav-e4a28a3c109c2b77f0d62eb973a6beeb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
