@@ -43,19 +43,19 @@ animations = [ {
 "name": "Run",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Dodge",
-"speed": 16.0
-}, {
 "frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "Attack_Sword",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Dodge",
+"speed": 16.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 118.223, 216.801 )
+extents = Vector2( 100, 216.801 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 150.435, 268.547 )
@@ -174,7 +174,7 @@ tracks/1/keys = {
 scale = Vector2( 0.1, 0.1 )
 z_index = 2
 collision_layer = 3
-collision_mask = 2147483924
+collision_mask = 2147483668
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -186,7 +186,7 @@ frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -12.132, 40.1145 )
+position = Vector2( -9.99999, 40.1145 )
 z_index = 2
 shape = SubResource( 1 )
 

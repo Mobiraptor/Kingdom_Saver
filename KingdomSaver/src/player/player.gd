@@ -26,6 +26,9 @@ const unallowed_substates_shield = ["dodge"] #неразрешённые ски�
 #Для корректного выключения щита
 var shield_up = 0 #Состояние щита
 
+#Включение и отключение возможности использования щита
+var shield_on = 0
+
 
 onready var singletone_stats = get_node("/root/SingletoneStats")
 
@@ -183,7 +186,7 @@ func _handle_skills(delta):
 		current_skills[0].activate()
 	
 	#skill 1 is shield
-	if Input.is_action_just_pressed("skill2") and not (player_substate in unallowed_substates_shield):
+	if Input.is_action_just_pressed("skill2") and not (player_substate in unallowed_substates_shield) and (shield_on == 1):
 		current_skills[1].activate()
 		player_substate = "blocking"
 		shield_up = 1

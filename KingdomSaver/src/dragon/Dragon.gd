@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 class_name Destructable
 
+onready var dragon_starting_position = get_node(".").position
 var velocity = Vector2()
 var countdown = 3
 
@@ -33,7 +34,7 @@ onready var game: Battle1 = get_parent()
 const explosion_scene := preload("res://src/destructables/explosion/Explosion.tscn")
 const dragon_breath_scene := preload("res://src/dragon/dragon_breath/DragonBreath.tscn")
 const dragon_fireball_scene := preload("res://src/dragon/Fireball/Fireball(projectile).tscn")
-export var start_health := 100
+export var start_health := 200
 onready var health := start_health
 var is_destroyed := false
 
@@ -134,7 +135,7 @@ func next_countdown(this_state):
 		2: # standing
 			return 0.5
 		3: # standing, prepare to fly
-			return 1
+			return 1.1
 		4: #fly up
 			return 2.9
 		5: #fly forward
@@ -165,9 +166,10 @@ func next_state(this_state):
 			direction = -direction
 			scale.x = -scale.x
 			FireballVector.x = -FireballVector.x
-			barrage=4
+			#barrage=2
 			return 6
 		6: #rotate and fly down
+			barrage=2
 			stomp.disabled = 1
 			return 7
 		7: #standing, prepare fireball
@@ -194,3 +196,11 @@ func _handle_movement(delta):
 			velocity.x = 0
 			velocity.y -= FLY_SPEED * 2 * delta
 	velocity = move_and_slide(velocity, Vector2(0,-1))
+
+#signals
+#pause dragon after awakening animation
+func _on_AnimationPlayer_animation_finished(animation_name):
+	if animation_name == "Awake":
+		pause_mode = PAUSE_MODE_INHERIT
+	#get_node(".").pause_mode = true
+	#get_tree().paused=true

@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/dragon/Fireball/Fireball.png" type="Texture" id=1]
 [ext_resource path="res://src/dragon/Fireball/Fireball(projectile).gd" type="Script" id=2]
 [ext_resource path="res://src/dragon/Fireball/Fireball.gd" type="Script" id=3]
+[ext_resource path="res://assets/dragon/Sounds/Fireball/fire_ignite_4.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/dragon/Sounds/Fireball/fire_ignite_5.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/dragon/Sounds/Fireball/fire_ignite_2.wav" type="AudioStream" id=6]
+[ext_resource path="res://src/dragon/Fireball/Sound.gd" type="Script" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.0238
@@ -22,6 +26,21 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FIreball"]
 shape = SubResource( 1 )
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 7 )
+
+[node name="Sound 1" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="Sound 2" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Sound 3" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="body_entered" from="FIreball" to="FIreball" method="_on_FIreball_body_entered"]
 [connection signal="tree_exited" from="FIreball" to="." method="_on_FIreball_tree_exited"]

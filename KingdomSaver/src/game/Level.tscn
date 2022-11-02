@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/game/camera_follow.gd" type="Script" id=1]
+[ext_resource path="res://N/Assets/BG.png" type="Texture" id=2]
+[ext_resource path="res://src/game/Wall.tscn" type="PackedScene" id=3]
+
+[node name="Level" type="Node2D"]
+position = Vector2( 482.29, 281.697 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchor_left = 0.496
+anchor_top = 0.497
+anchor_right = 0.496
+anchor_bottom = 0.497
+margin_left = -527.904
+margin_top = -303.2
+margin_right = 527.096
+margin_bottom = 302.8
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2( 7.70996, -51.697 )
+
+[node name="TopWall" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 30, -272 )
+scale = Vector2( 1.5, 1 )
+
+[node name="BottomWall" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 21, 284 )
+scale = Vector2( 1.46, 1 )
+collision_layer = 2147483648
+collision_mask = 279
+
+[node name="LeftWall" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( -500, -8 )
+rotation = 1.5708
+
+[node name="RightWall" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 536, 17 )
+rotation = 1.5708
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2( -0.290039, 3 )
+current = true
+zoom = Vector2( 0.9, 0.9 )
+script = ExtResource( 1 )

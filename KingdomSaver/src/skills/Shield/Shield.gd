@@ -13,13 +13,12 @@ onready var min_angle = -1.5
 
 func _physics_process(_delta):
 	raycast2D.cast_to = pointer
-	if raycast2D.cast_to.angle() <  max_angle and raycast2D.cast_to.angle() > min_angle:
-		front.rotation = raycast2D.cast_to.angle()
-		emit_signal("angle_val",front.rotation)
-	if raycast2D.cast_to.angle() > max_angle:
-		front.rotation = max_angle
-	if raycast2D.cast_to.angle() < min_angle:
-		front.rotation = min_angle
+	if pointer.angle() <  max_angle and pointer.angle() > min_angle:
+		front.rotation = pointer.angle()
+	#if raycast2D.cast_to.angle() > max_angle:
+		#front.rotation = max_angle
+	#if raycast2D.cast_to.angle() < min_angle:
+		#front.rotation = min_angle
 
 
 		

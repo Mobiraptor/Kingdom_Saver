@@ -15,19 +15,24 @@ var direction = 1
 var current_time := 0.0
 
 onready var sprite := $Sprite
+onready var sound = $Sound
 onready var Fball = get_node(".")
+onready var Dragon = get_node("/root/Game/Dragon")
+#onready var starting_position=get_node("/root/Game/Dragon")
 
 func _ready():
 	randoming()
 	if (direction == -1):  # direction detection. flip to match dragon sight
 		sprite.flip_h = direction
 	rotation() 
-	if Fball.position[1]<0:
+	if Fball.position[1]<Dragon.dragon_starting_position[1]-200:
 		Fball.rotation_degrees=-90
 		FyVelocity=5
 		FxVelocity=0
 		if (direction == -1):  # direction detection
 			Fball.rotation_degrees=90
+	#sound.play()
+	
 
 func rotation(): # поворачивает спрайт так, чтобы он смотрел в ту сторону, в которую летит
 	Fball.rotation_degrees=sin(FxVelocity/FyVelocity)*30*+direction

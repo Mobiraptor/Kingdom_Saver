@@ -7,8 +7,6 @@ onready var ShieldUp = Shield.instance()
 onready var temp = get_parent()
 onready var raycast2D = ShieldUp.get_child(1)
 
-onready var max_angle = 1.5
-onready var min_angle = -1.5
 
 
 
